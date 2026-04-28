@@ -158,6 +158,22 @@
             }
         }
 
+        /* Ticker text pulsing glow */
+        @keyframes ticker-pulse {
+            0%, 100% { 
+                text-shadow: 0 0 10px #c084fc, 0 0 20px #c084fc, 0 0 40px #a855f7; 
+                transform: scale(1);
+            }
+            50% { 
+                text-shadow: 0 0 20px #c084fc, 0 0 40px #c084fc, 0 0 70px #a855f7; 
+                transform: scale(1.02);
+            }
+        }
+
+        .ticker-pulse {
+            animation: ticker-pulse 2.5s ease-in-out infinite;
+        }
+
         /* Energy Wave around mascot */
         @keyframes energy-wave {
             0% { transform: scale(0.8); opacity: 0.6; }
@@ -279,6 +295,11 @@
                     <div class="absolute -top-4 -right-4 w-8 h-8 bg-cyan-400 rounded-full blur-md animate-pulse z-20"></div>
                     <div class="absolute -bottom-6 -left-6 w-6 h-6 bg-purple-400 rounded-full blur-md animate-pulse z-20" style="animation-delay: 1.2s;"></div>
                 </div>
+            </div>
+
+            <!-- Ticker Text -->
+            <div class="mb-6">
+                <span class="font-display text-2xl md:text-3xl tracking-[6px] text-purple-400 neon-purple ticker-pulse">TICKER IS $UMBR</span>
             </div>
 
             <div class="max-w-3xl mx-auto">
